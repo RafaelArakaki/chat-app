@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  min-width: 0;
+}
+
+input {
+  outline: none
+}
+
+.bg-chat {
+  position: relative;
+}
+
+.bg-chat::before {
+  content: "";
+  position: absolute;
+  inset: 0;  
+  background: url('./assets/images/bg-chat.png');
+  opacity: 0.3;
+  background-size: 200px;
+  background-position: bottom;
+  z-index: -1;
+}
