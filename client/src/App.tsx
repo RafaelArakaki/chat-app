@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//import { socket } from './services/socket';
 import Home from './pages/home';
 import Chat from './pages/chat';
 

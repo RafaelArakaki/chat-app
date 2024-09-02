@@ -1,5 +1,6 @@
 import { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { socket } from '../../services/socket';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const Home = () => {
 
     if (name) {
       localStorage.setItem('userName', name);
+      socket.emit('newUser', { name, socketID: socket.id });
       navigate('/chat');
     }    
   }
@@ -46,7 +48,7 @@ const Home = () => {
           py-1
           px-7"
         >
-          Entrar
+          Avançar
         </button>
       </form>
     </div>

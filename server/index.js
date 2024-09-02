@@ -14,6 +14,7 @@ let users = []
 
 socketIO.on('connection', (socket) => {
   console.log(`Usuário ${socket.id} conectado`);
+  
   socket.on("message", data => {
     socketIO.emit("messageResponse", data)
   })
@@ -38,7 +39,6 @@ socketIO.on('connection', (socket) => {
 app.get("/api", (req, res) => {
   res.json({message: "Hello"})
 });
-
    
 http.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
